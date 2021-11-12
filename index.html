@@ -10,6 +10,15 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather Application</title>
   </head>
@@ -18,7 +27,7 @@
       <div class="weather-application">
         <h1>Boots or Sandals today?</h1>
         <form id="input-city-form">
-          <input type="text" placeholder="Enter a city" />
+          <input type="text" placeholder="Enter a city" id="city-input-box" />
           <br />
           <input
             type="submit"
@@ -37,24 +46,27 @@
           <h2>San Diego</h2>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-4">
             <ul>
-              <li>Friday, 5:00 PM</li>
+              <li>Friday, Nov 11</li>
+              <li>5:00 PM</li>
+            </ul>
+          </div>
+          <div class="col-4">
+            <div class="today-temp">73°F</div>
+          </div>
+          <div class="col-4">
+            <ul>
               <li>Humidity: 72%</li>
               <li>Wind: 3.05km/h</li>
             </ul>
           </div>
-          <div class="col-md-4">
-            <div class="today-weather-icon">☀️</div>
-          </div>
-          <div class="col-md-4">
-            <div class="today-temp">73°F</div>
-          </div>
         </div>
-        <small>
+        <small class="author-text">
           <a
             href="https://github.com/misstheni/Athena_Weather_App"
             target="_blank"
+            id="github-link"
             >Open-source code</a
           >
           by Athena Borrego
