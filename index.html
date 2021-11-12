@@ -15,8 +15,51 @@
   </head>
   <body>
     <div class="container">
-      <h1>Boots or Sandals today?</h1>
-      <a href="" class="btn btn-primary">Click me</a>
+      <div class="weather-application">
+        <h1>Boots or Sandals today?</h1>
+        <form id="input-city-form">
+          <input type="text" placeholder="Enter a city" />
+          <br />
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Go!"
+            id="input-submit-btn"
+          />
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Current Location"
+            id="current-location-btn"
+          />
+        </form>
+        <div class="input-city">
+          <h2>San Diego</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ul>
+              <li>Friday, 5:00 PM</li>
+              <li>Humidity: 72%</li>
+              <li>Wind: 3.05km/h</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <div class="today-weather-icon">☀️</div>
+          </div>
+          <div class="col-md-4">
+            <div class="today-temp">73°F</div>
+          </div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/misstheni/Athena_Weather_App"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Athena Borrego
+        </small>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>
