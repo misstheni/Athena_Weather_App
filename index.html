@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;700&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
 
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather Application</title>
@@ -42,35 +48,57 @@
             id="current-location-btn"
           />
         </form>
-        <div class="input-city">
-          <h2>San Diego</h2>
+        <div class="weather-app-result">
+          <div class="input-city-result">
+            <h2>San Diego</h2>
+          </div>
+          <div class="todays-date todays-time">
+            <h3>Friday, Nov 11 . 5:00 PM</h3>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <ul>
+                <li>
+                  <i class="fas fa-thermometer-half"></i
+                  ><strong> 90° / 61°</strong><br />High / Low
+                </li>
+                <br />
+                <li class="degree-type">°F | °C</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <div class="clearfix weather-icon">
+                <img
+                  src="images/Sun_Monochromatic.svg"
+                  alt="Clear"
+                  class="float-left"
+                />
+              </div>
+              <div class="today-temp">73°</div>
+            </div>
+            <div class="col-4">
+              <ul>
+                <li>
+                  <i class="fas fa-tint"></i><strong> 72%</strong><br />Humidity
+                </li>
+                <br />
+                <li>
+                  <i class="fas fa-wind"></i><strong> 3.05km/h</strong
+                  ><br />Wind
+                </li>
+              </ul>
+            </div>
+          </div>
+          <small class="author-text">
+            <a
+              href="https://github.com/misstheni/Athena_Weather_App"
+              target="_blank"
+              id="github-link"
+              >Open-source code</a
+            >
+            by Athena Borrego
+          </small>
         </div>
-        <div class="row">
-          <div class="col-4">
-            <ul>
-              <li>Friday, Nov 11</li>
-              <li>5:00 PM</li>
-            </ul>
-          </div>
-          <div class="col-4">
-            <div class="today-temp">73°F</div>
-          </div>
-          <div class="col-4">
-            <ul>
-              <li>Humidity: 72%</li>
-              <li>Wind: 3.05km/h</li>
-            </ul>
-          </div>
-        </div>
-        <small class="author-text">
-          <a
-            href="https://github.com/misstheni/Athena_Weather_App"
-            target="_blank"
-            id="github-link"
-            >Open-source code</a
-          >
-          by Athena Borrego
-        </small>
       </div>
     </div>
     <script src="src/app.js"></script>
