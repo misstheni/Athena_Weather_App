@@ -153,8 +153,10 @@ hr {
 #current-date {
   text-align: left;
   padding: 0px 0px 0px 40px;
+  color: rgb(6, 43, 73);
 }
 #current-time {
   text-align: right;
   padding: 0px 40px 0px 0px;
+  color: rgb(6, 43, 73);
 }
