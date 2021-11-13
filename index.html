@@ -58,7 +58,7 @@
         </form>
         <div class="weather-app-result">
           <div class="input-city-result">
-            <h2>San Diego</h2>
+            <h2 id="input-city-result"></h2>
           </div>
           <div class="todays-date todays-time">
             <h3>Friday, Nov 11 | 5:00 PM</h3>
@@ -68,7 +68,10 @@
               <ul>
                 <li>
                   <i class="fas fa-thermometer-half small-icons"></i
-                  ><strong class="weather-variables"> 90° / 61°</strong
+                  ><strong
+                    class="weather-variables"
+                    id="high-low-temps"
+                  ></strong
                   ><br />High / Low
                 </li>
                 <br />
@@ -83,18 +86,19 @@
                   class="float-left"
                 />
               </div>
-              <div class="today-temp">73°</div>
+              <div class="today-temp" id="current-temp">°</div>
             </div>
             <div class="col-4">
               <ul>
                 <li>
                   <i class="fas fa-tint small-icons"></i
-                  ><strong class="weather-variables"> 72%</strong><br />Humidity
+                  ><strong class="weather-variables" id="humidity"> %</strong
+                  ><br />Humidity
                 </li>
                 <br />
                 <li>
                   <i class="fas fa-wind small-icons"></i
-                  ><strong class="weather-variables"> 3.05km/h</strong
+                  ><strong class="weather-variables" id="wind"> km/h</strong
                   ><br />Wind
                 </li>
               </ul>
