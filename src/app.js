@@ -24,6 +24,18 @@ function formatTime(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+
+  if (hours >= 12) {
+    minutes = `${minutes} PM`;
+  } else {
+    minutes = `${minutes} AM`;
+  }
   return `${hours}:${minutes}`;
 }
 
