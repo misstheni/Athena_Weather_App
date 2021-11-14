@@ -88,6 +88,8 @@ function displayFahrenheit(event) {
   let fahrenheitMainTemp = (mainTemp * 9) / 5 + 32;
   let fahrenheitMinTemp = (minTemp * 9) / 5 + 32;
   let fahrenheitMaxTemp = (maxTemp * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   temperatureElement.innerHTML = `${Math.round(fahrenheitMainTemp)}°`;
   highLowTempElement.innerHTML = `${Math.round(
     fahrenheitMaxTemp
@@ -100,6 +102,8 @@ function displayCelsius(event) {
   let celsiusMainTemp = mainTemp;
   let celsiusMinTemp = minTemp;
   let celsiusMaxTemp = maxTemp;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   temperatureElement.innerHTML = `${Math.round(celsiusMainTemp)}°`;
   highLowTempElement.innerHTML = `${Math.round(celsiusMaxTemp)}° / ${Math.round(
     celsiusMinTemp
