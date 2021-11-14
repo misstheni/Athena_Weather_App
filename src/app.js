@@ -37,6 +37,9 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let timeElement = document.querySelector("#current-time");
   let iconElement = document.querySelector("#weather-icon");
+  mainTemp = Math.round(response.data.main.temp);
+  minTemp = Math.round(response.data.main.temp_min);
+  maxTemp = Math.round(response.data.main.temp_max);
   mainTempElement.innerHTML = `${Math.round(response.data.main.temp)}°`;
   cityElement.innerHTML = response.data.name;
   highLowElements.innerHTML = `${Math.round(
@@ -65,7 +68,43 @@ function handleSubmit(event) {
   let cityInput = document.querySelector("#city-input-box");
   search(cityInput.value);
 }
-search("Los Angeles");
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  let highLowTempElement = document.querySelector("#high-low-temps");
+  let fahrenheitMainTemp = (mainTemp * 9) / 5 + 32;
+  let fahrenheitMinTemp = (minTemp * 9) / 5 + 32;
+  let fahrenheitMaxTemp = (maxTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheitMainTemp)}°`;
+  highLowTempElement.innerHTML = `${Math.round(
+    fahrenheitMaxTemp
+  )}° / ${Math.round(fahrenheitMinTemp)}°`;
+}
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  let highLowTempElement = document.querySelector("#high-low-temps");
+  let celsiusMainTemp = mainTemp;
+  let celsiusMinTemp = minTemp;
+  let celsiusMaxTemp = maxTemp;
+  temperatureElement.innerHTML = `${Math.round(celsiusMainTemp)}°`;
+  highLowTempElement.innerHTML = `${Math.round(celsiusMaxTemp)}° / ${Math.round(
+    celsiusMinTemp
+  )}°`;
+}
+
+let mainTemp = null;
+let maxTemp = null;
+let minTemp = null;
 
 let form = document.querySelector("#input-city-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
+
+search("Los Angeles");
