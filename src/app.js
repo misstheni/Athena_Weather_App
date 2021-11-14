@@ -54,8 +54,18 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
-let apiKey = "5678cd202ad8609baa4c102a770e20ac";
-let city = "Reno";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "5678cd202ad8609baa4c102a770e20ac";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input-box");
+  search(cityInput.value);
+}
+search("Los Angeles");
+
+let form = document.querySelector("#input-city-form");
+form.addEventListener("submit", handleSubmit);
