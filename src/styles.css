@@ -30,7 +30,7 @@ ul {
   text-align: center;
 }
 p {
-  margin: 0px 90px;
+  padding: 0px 40px 0px 0px;
   color: #ffffff;
   font-size: 12px;
   text-align: right;
@@ -88,6 +88,7 @@ hr {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 10px;
+  text-align: left;
 }
 #github-link {
   text-decoration: none;
@@ -100,13 +101,20 @@ hr {
 #fahrenheit,
 #celsius {
   text-decoration: none;
+  font-size: 15px;
+  transition: all 250ms ease-in-out;
+}
+#fahrenheit:hover,
+#celsius:hover {
+  font-size: 18px;
+  color: rgb(6, 43, 73);
 }
 .small-icons {
   color: #ffffff;
 }
 .weather-variables {
   color: rgb(6, 43, 73);
-  font-size: 16px;
+  font-size: 20px;
 }
 #input-submit-btn {
   background: linear-gradient(45deg, rgb(20, 114, 177), rgb(31, 181, 231));
