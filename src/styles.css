@@ -92,9 +92,8 @@ hr {
 #github-link {
   text-decoration: none;
 }
-.weather-icon img {
+#weather-icon {
   max-width: 100px;
-  padding: 25px 0px 0px 0px;
 }
 .degree-type {
   font-size: 13px;
