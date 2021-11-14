@@ -93,11 +93,6 @@ hr {
 #github-link {
   text-decoration: none;
 }
-
-.degree-type {
-  font-size: 13px;
-  text-align: center;
-}
 #fahrenheit,
 #celsius {
   text-decoration: none;
@@ -107,7 +102,13 @@ hr {
 #fahrenheit:hover,
 #celsius:hover {
   font-size: 18px;
-  color: rgb(6, 43, 73);
+  color: #ffffff;
+  text-decoration: none;
+}
+.degree-type .active {
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
 }
 .small-icons {
   color: #ffffff;
