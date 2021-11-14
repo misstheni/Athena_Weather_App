@@ -99,6 +99,10 @@ hr {
   font-size: 13px;
   text-align: center;
 }
+#fahrenheit,
+#celsius {
+  text-decoration: none;
+}
 .small-icons {
   color: #ffffff;
 }
