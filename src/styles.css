@@ -40,6 +40,27 @@ hr {
   margin: 25px auto;
   color: #ffffff;
 }
+.background-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+}
+.background-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.container {
+  position: relative;
+  z-index: 1;
+}
 .row {
   text-align: center;
   display: flex;
