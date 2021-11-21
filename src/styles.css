@@ -179,6 +179,7 @@ hr {
 .accordion-item {
   background: transparent;
   border: none;
+  font-family: "Montserrat", sans-serif;
 }
 .forecast-button {
   color: #ffffff;
@@ -187,6 +188,23 @@ hr {
 }
 .accordion-body {
   color: white;
+}
+.forecast-table {
+  margin-top: 15px;
+  text-align: center;
+  line-height: 35px;
+}
+.forecast-day {
+  color: rgb(8, 50, 75);
+  font-weight: bold;
+}
+.forecast-max {
+  color: rgb(8, 50, 75);
+  font-weight: 500;
+}
+.forecast-min {
+  color: rgb(13, 65, 95);
+  font-weight: 400;
 }
 #current-date {
   text-align: left;
