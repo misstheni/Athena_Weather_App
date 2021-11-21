@@ -25,10 +25,10 @@ h4 {
 ul {
   list-style: none;
   line-height: 25px;
+  padding: 10px 10px;
   font-size: 12px;
   text-align: center;
 }
-
 p {
   padding: 0px 40px 0px 0px;
   color: #ffffff;
@@ -36,7 +36,10 @@ p {
   text-align: right;
   font-family: "Raleway", sans-serif;
 }
-
+hr {
+  margin: 25px auto;
+  color: #ffffff;
+}
 .background-container {
   display: block;
   width: 100%;
@@ -237,12 +240,11 @@ p {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: rgb(9, 54, 90);
 }
-.sunrise-sunset {
+li .sunrise-sunset {
+  margin: 0px;
   text-align: center;
+  justify-content: inherit;
 }
-.col-2 {
-  width: inherit;
-}
-.col-3 {
-  margin-right: 0px;
+.col-6 {
+  padding: 0px 5px;
 }
