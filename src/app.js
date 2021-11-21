@@ -32,7 +32,7 @@ function formatDay(timestamp) {
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class ="row">`;
+  let forecastHTML = `<div class ="row" id="forecast-table">`;
 
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
@@ -105,10 +105,12 @@ function displayTemperature(response) {
   let dateElement = document.querySelector("#current-date");
   let timeElement = document.querySelector("#current-time");
   let iconElement = document.querySelector("#weather-icon");
+  let sunriseTimeElement = document.querySelector("#sunrise");
+  let sunsetTimeElement = document.querySelector("#sunset");
   mainTemp = Math.round(response.data.main.temp);
   minTemp = Math.round(response.data.main.temp_min);
   maxTemp = Math.round(response.data.main.temp_max);
-  mainTempElement.innerHTML = `${Math.round(response.data.main.temp)}°`;
+  mainTempElement.innerHTML = `${Math.round(response.data.main.temp)}°F`;
   cityElement.innerHTML = response.data.name;
   highLowElements.innerHTML = `${Math.round(
     response.data.main.temp_max
@@ -123,7 +125,9 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
-
+  sunriseTimeElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+  sunsetTimeElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  console.log(response.data.sys);
   getForecast(response.data.coord);
 }
 
