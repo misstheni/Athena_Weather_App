@@ -121,7 +121,7 @@ hr {
   background: linear-gradient(45deg, rgb(20, 114, 177), rgb(31, 181, 231));
 }
 #current-location-btn {
-  background: linear-gradient(45deg, rgb(31, 181, 231), rgb(151, 209, 228));
+  background: linear-gradient(45deg, rgb(31, 181, 231), rgb(50, 113, 134));
 }
 .btn-primary {
   font-size: 12px;
@@ -157,6 +157,36 @@ hr {
   margin: 0px auto;
   padding: 0px 0px 10px 0px;
   color: black;
+}
+.accordion-button {
+  font-size: inherit;
+  font-size: 15px;
+  background: rgb(12, 64, 95);
+  color: #ffffff;
+  transition: all 250ms ease-in-out;
+}
+.accordion-button:hover {
+  background: rgb(8, 50, 75);
+  font-size: 16px;
+}
+.accordion-button:not(.collapsed) {
+  background: rgb(8, 50, 75);
+  font-size: 16px;
+}
+.accordion-button:focus {
+  box-shadow: inherit;
+}
+.accordion-item {
+  background: transparent;
+  border: none;
+}
+.forecast-button {
+  color: #ffffff;
+  margin: 0 auto;
+  padding: 10px 0px 10px 80px;
+}
+.accordion-body {
+  color: white;
 }
 #current-date {
   text-align: left;
