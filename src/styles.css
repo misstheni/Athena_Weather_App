@@ -42,6 +42,8 @@ hr {
 }
 .row {
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 .weather-application {
   max-width: 600px;
@@ -189,11 +191,12 @@ hr {
 .accordion-body {
   color: white;
 }
-.forecast-table {
-  margin-top: 15px;
+.forecast-table .col-2 {
+  margin: 15px 7px;
   text-align: center;
   line-height: 35px;
 }
+
 .forecast-day {
   color: rgb(8, 50, 75);
   font-weight: bold;
