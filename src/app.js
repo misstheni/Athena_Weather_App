@@ -67,7 +67,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "5678cd202ad8609baa4c102a770e20ac";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -124,7 +124,7 @@ function displayTemperature(response) {
 
 function search(city) {
   let apiKey = "5678cd202ad8609baa4c102a770e20ac";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -134,46 +134,11 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let highLowTempElement = document.querySelector("#high-low-temps");
-  let fahrenheitMainTemp = (mainTemp * 9) / 5 + 32;
-  let fahrenheitMinTemp = (minTemp * 9) / 5 + 32;
-  let fahrenheitMaxTemp = (maxTemp * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  temperatureElement.innerHTML = `${Math.round(fahrenheitMainTemp)}°`;
-  highLowTempElement.innerHTML = `${Math.round(
-    fahrenheitMaxTemp
-  )}° / ${Math.round(fahrenheitMinTemp)}°`;
-}
-function displayCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temp");
-  let highLowTempElement = document.querySelector("#high-low-temps");
-  let celsiusMainTemp = mainTemp;
-  let celsiusMinTemp = minTemp;
-  let celsiusMaxTemp = maxTemp;
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-  temperatureElement.innerHTML = `${Math.round(celsiusMainTemp)}°`;
-  highLowTempElement.innerHTML = `${Math.round(celsiusMaxTemp)}° / ${Math.round(
-    celsiusMinTemp
-  )}°`;
-}
-
 let mainTemp = null;
 let maxTemp = null;
 let minTemp = null;
 
 let form = document.querySelector("#input-city-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsius);
 
 search("Los Angeles");
