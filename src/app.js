@@ -73,8 +73,8 @@ function getForecast(coordinates) {
 
 function formatTime(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
+  let hours = date.getUTCHours();
+  let minutes = date.getUTCMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
@@ -94,6 +94,7 @@ function formatTime(timestamp) {
 let mainTemp = null;
 let maxTemp = null;
 let minTemp = null;
+let timezone = null;
 
 function displayTemperature(response) {
   let mainTempElement = document.querySelector("#current-temp");
@@ -107,6 +108,9 @@ function displayTemperature(response) {
   let iconElement = document.querySelector("#weather-icon");
   let sunriseTimeElement = document.querySelector("#sunrise");
   let sunsetTimeElement = document.querySelector("#sunset");
+  let localSunriseTimezone = response.data.sys.sunrise + response.data.timezone;
+  let localSunsetTimezone = response.data.sys.sunset + response.data.timezone;
+  let localTimezone = response.data.dt + response.data.timezone;
   mainTemp = Math.round(response.data.main.temp);
   minTemp = Math.round(response.data.main.temp_min);
   maxTemp = Math.round(response.data.main.temp_max);
@@ -119,15 +123,14 @@ function displayTemperature(response) {
   windElement.innerHTML = `${Math.round(response.data.wind.speed)} mph`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  timeElement.innerHTML = formatTime(response.data.dt * 1000);
+  timeElement.innerHTML = formatTime(localTimezone * 1000);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
-  sunriseTimeElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
-  sunsetTimeElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
-  console.log(response.data.sys);
+  sunriseTimeElement.innerHTML = formatTime(localSunriseTimezone * 1000);
+  sunsetTimeElement.innerHTML = formatTime(localSunsetTimezone * 1000);
   getForecast(response.data.coord);
 }
 
