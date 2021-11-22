@@ -175,6 +175,7 @@ hr {
   color: black;
 }
 .accordion-button {
+  text-align: center;
   font-size: inherit;
   font-size: 15px;
   background: rgb(12, 64, 95);
